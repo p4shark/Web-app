@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title th:text="${game.getCapture()}"></title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link th:href="@{/css/games.css}" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="maininfo">
+    <div class="aboutgame">
+          <div class="images">
+            <img width="100%"  th:src=|/images/${game.getImage()}| >
+          </div>
+        <div class="aboutgametext">
+            <div class="gamename" th:text="${game.getCapture()}">
+
+            </div>
+            <div class="description" th:text="${game.getCapture()}+' — это многопользовательская онлайн-боевая арена (MOBA), в которой две команды из пяти игроков соревнуются,
+            чтобы коллективно уничтожить большую структуру, защищаемую противоположной командой, известной как Древняя, защищая свою собственную.
+            Как и в Defense of the Ancients, игра управляется с помощью стандартных элементов управления стратегией в реальном времени и представлена
+            на одной карте в трехмерной изометрической перспективе'"> </div>
+        </div>
+    </div>
+    <div>
+        <div>Рецензия</div>
+        <div>,kf-,kf-,kf-,kf-,kf-,kf-,kf-,kf-,kf-,kf-,kf-,kf-,kf-,kf-,kf-,kf-,kf-,kf-,kf-,kf-,kf-,kf-,kf-,kf-,kf-,kf-,kf-,kf-,kf-,kf-,kf-,kf-,kf-,kf-,kf-,kf-,kf</div>
+    </div>
+<p>Text test e</p>
+</div>
+</body>
+</html>

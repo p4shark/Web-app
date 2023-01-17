@@ -7,6 +7,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,21 +38,19 @@ public class MainController
         }
         String sql ="select * from games;";
         games = jdbdTemplate.query(sql, new GameMapper());
-        for(int i=0;i<games.size();i++)
-        {
-            System.out.println(games.get(i).getCapture());
-        }
-        String image = "/images/1.jpg";
+
         model.addAttribute("count", items);
         model.addAttribute("games", games);
 
         return "index";
     }
-    @GetMapping("/profile")
-    public String Profile(Model model)
+    @GetMapping("/games/{id}")
+    public String Game(@PathVariable(value = "id")int id, Model model)
     {
-        model.addAttribute("name", "p4shark");
-        return "profile";
+        String sql ="select * from games where id="+id+";";
+        Game gamenow = jdbdTemplate.query(sql, new GameMapper()).get(0);
+        model.addAttribute("game", gamenow);
+        return "games";
     }
 
 }

@@ -28,8 +28,10 @@
     <th:block th:each="item: ${games}">
         <div class="col">
         <div class="card shadow-sm">
-            <img class="bd-placeholder-img card-img-top" width="100" height="400" th:src=|/images/${item.getImage()}| >
+            <a th:href="'/games/'+${item.getId()}">
+            <img class="bd-placeholder-img card-img-top" width="100%"  th:src=|/images/${item.getImage()}| >
             </img>
+            </a>
 
             <div class="card-body">
                 <p class="card-text" th:text="${item.getCapture()}"></p>
