@@ -1,7 +1,5 @@
 package com.p4shark.games;
 
-import org.springframework.jdbc.core.RowMapper;
-
 public class Game
 {
 
@@ -20,20 +18,33 @@ public class Game
     private String Capture;
     private String Description;
     private String Image;
+
+
+
+    private String Review;
     private int Screenshots=-1;
 
-    public Game(int tid, String tDescription, String tImage, int tScrenshots)
+    public Game(int tid, String tDescription, String tImage, String review, int tScrenshots)
     {
         id = tid;
         Description = tDescription;
         Image = tImage;
+        Review = review;
         Screenshots = tScrenshots;
     }
     public Game()
     {
 
     }
+    public String getReview()
+    {
+        return Review;
+    }
 
+    public void setReview(String review)
+    {
+        Review = review;
+    }
 
     public int getId()
     {

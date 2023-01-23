@@ -16,6 +16,7 @@ public class GameMapper implements RowMapper<Game>
         temp.setDescription(rs.getString("description"));
         temp.setImage(rs.getString("image"));
         temp.setScreenshots(rs.getInt("screenshots"));
+        temp.setReview(rs.getString("review"));
         return temp;
     }
 }
